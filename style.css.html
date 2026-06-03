@@ -1,71 +1,97 @@
-css
+```css
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    display:grid;
-    grid-template-columns:220px 1fr;
-    grid-template-rows:80px auto 60px;
-    grid-template-areas:
-    "header header"
-    "menu main"
-    "footer footer";
-    min-height:100vh;
+    font-family:Arial,sans-serif;
 }
 
 header{
-    grid-area:header;
-    background:#0066cc;
+    background:#8b0000;
     color:white;
+    padding:20px;
     display:flex;
+    justify-content:space-between;
     align-items:center;
-    justify-content:center;
 }
 
 nav{
-    grid-area:menu;
-    background:#f2f2f2;
-    padding:20px;
+    display:flex;
+    gap:20px;
 }
 
-nav ul{
-    list-style:none;
+nav a{
+    color:white;
+    text-decoration:none;
 }
 
-nav li{
-    margin:15px 0;
+.banner{
+    padding:80px;
+    text-align:center;
+    background:#ddd;
 }
 
-main{
-    grid-area:main;
-    padding:20px;
+.pratos{
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:15px;
-}
-
-.destaque{
-    background:#ffe082;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
     padding:20px;
-    grid-column:span 2;
-    grid-row:span 2;
 }
 
 .card{
-    background:#e9ecef;
-    padding:15px;
-    border-radius:8px;
+    background:#f4f4f4;
+    padding:20px;
+    text-align:center;
+}
+
+.contato{
+    padding:30px;
+    text-align:center;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:10px;
 }
 
 footer{
-    grid-area:footer;
     background:#222;
     color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    text-align:center;
+    padding:15px;
 }
+
+@media(max-width:768px){
+
+    .pratos{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    body{
+        font-size:14px;
+    }
+
+    .banner{
+        padding:40px;
+    }
+}
+
+@media(max-width:480px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    .pratos{
+        grid-template-columns:1fr;
+    }
+
+    button{
+        width:100%;
+    }
+
+    img{
+        max-width:100%;
+    }
+}
+```
